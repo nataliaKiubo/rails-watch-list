@@ -6,6 +6,7 @@
   <% @lists.each do |list| %>
     <strong>Name:</strong>
     <%= list.name %>
+    <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
     <p>
       <%= link_to "Show this list", list %>
     </p>
@@ -20,6 +21,7 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
+    <%= f.input :photo, as: :file%>
   </div>
 
   <div class="form-actions">
